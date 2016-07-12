@@ -102,4 +102,11 @@ class ParserTest extends PHPUnit_Framework_TestCase
             array("Syntax error: operator '=' cannot be used as a unary operator or with an operator as an operand.", '10 == 10'),
         );
     }
+    
+    public function testSetConstant()
+    {
+        $parser = new Parser();
+        $parser->setConstant('#pi', M_PI);
+        $this->assertEquals(M_PI, $parser->evaluate('#pi'));
+    }
 }
