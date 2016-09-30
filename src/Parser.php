@@ -176,6 +176,9 @@ class Parser
                         $n = $stack->pop();
                         $stack->push($stack->pop() % $n);
                         break;
+                    case ',':
+                        //
+                        break;
                     case 'abs':
                     case 'sin':
                     case 'sinh':
@@ -192,6 +195,10 @@ class Parser
                     case 'floor':
                     case 'sqrt':
                         $stack->push(call_user_func($tokenValue, $stack->pop()));
+                        break;
+                    case 'min':
+                    case 'max':
+                        $stack->push(call_user_func($tokenValue, $stack->pop(), $stack->pop()));
                         break;
                     case '^':
                         $n = $stack->pop();
