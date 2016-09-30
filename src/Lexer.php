@@ -43,7 +43,8 @@ class Lexer
         '*' => array('priority' => 2, 'associativity' => Operator::O_LEFT_ASSOCIATIVE),
         '/' => array('priority' => 2, 'associativity' => Operator::O_LEFT_ASSOCIATIVE),
         '%' => array('priority' => 2, 'associativity' => Operator::O_LEFT_ASSOCIATIVE),
-        '^' => array('priority' => 3, 'associativity' => Operator::O_RIGHT_ASSOCIATIVE)
+        '^' => array('priority' => 3, 'associativity' => Operator::O_RIGHT_ASSOCIATIVE),
+        ',' => array('priority' => 3, 'associativity' => Operator::O_RIGHT_ASSOCIATIVE)
     );
     
     /**
@@ -68,6 +69,8 @@ class Lexer
         'ceil',
         'floor',
         'sqrt',
+        'min',
+        'max',
     );
 
     public function __construct()
