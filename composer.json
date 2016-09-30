@@ -1,5 +1,5 @@
 {
-    "name": "oat-sa/lib-beeme",
+    "name": "webfactorybulgaria/lib-beeme",
     "type": "library",
     "description": "Simple mathematical expression/equation parser and calculator.",
     "keywords": ["math parser", "shunting-yard algorithm", "math calculator"],
