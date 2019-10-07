@@ -26,6 +26,49 @@ $result = $parser->evaluate($expression);
 echo $result; // 302.000000
 ```
 
+Evaluate equation
+```php
+<?php
+
+$parser = new \oat\beeme\Parser();
+$expression = 'y = 1 + x';
+$result = $parser->evaluate(
+    $expression,
+    ['x' => 2],
+    ['y' => 3]
+);
+
+echo $result; // true
+```
+
+Compare
+```php
+<?php
+
+$parser = new \oat\beeme\Parser();
+$expression = 'x > 1 + 4';
+$result = $parser->evaluate(
+    $expression,
+    ['x' => 2]
+);
+
+echo $result; // false
+```
+
+```php
+<?php
+
+$parser = new \oat\beeme\Parser();
+$expression = 'y < 1 + x';
+$result = $parser->evaluate(
+    $expression,
+    ['x' => 2],
+    ['y' => 0]
+);
+
+echo $result; // true
+```
+
 ## Constants
 
 Beeme comes with two built-in constants that are "_pi_" and "_e_". You can also use custom constans in your expressions,

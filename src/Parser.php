@@ -8,7 +8,7 @@ namespace oat\beeme;
  * A Math Parser enabling mathematical expressions to be parsed. It supports
  * the -, +, *, / (including unary - and +), provides pi and e math constants,
  * but also a variable substitution mechanism. Finally, it enables comparisons,
- * using the = operator, returning boolean values for equation solving.
+ * using the =, <, > operator, returning boolean values for equation solving.
  *
  * @author Adrean Boyadzhiev (netforce) <adrean.boyadzhiev@gmail.com>
  * @author Jérôme Bogaerts <jerome@taotesting.com>
@@ -204,6 +204,14 @@ class Parser
                         break;
                     case '=':
                         $stack->push($this->compareFloat($stack->pop(), $stack->pop()));
+                        break;
+                    case '<':
+                        $n = $stack->pop();
+                        $stack->push($stack->pop() < $n);
+                        break;
+                    case '>':
+                        $n = $stack->pop();
+                        $stack->push($stack->pop() > $n);
                         break;
                     default:
                         throw new \InvalidArgumentException(sprintf('Unexpected character: %s', $tokenValue));

@@ -38,6 +38,8 @@ class Lexer
      */
     protected static $operatorsMap = array(
         '=' => array('priority' => 0, 'associativity' => Operator::O_LEFT_ASSOCIATIVE),
+        '<' => array('priority' => 0, 'associativity' => Operator::O_LEFT_ASSOCIATIVE),
+        '>' => array('priority' => 0, 'associativity' => Operator::O_LEFT_ASSOCIATIVE),
         '+' => array('priority' => 1, 'associativity' => Operator::O_LEFT_ASSOCIATIVE),
         '-' => array('priority' => 1, 'associativity' => Operator::O_LEFT_ASSOCIATIVE),
         '*' => array('priority' => 2, 'associativity' => Operator::O_LEFT_ASSOCIATIVE),
